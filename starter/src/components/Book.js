@@ -27,9 +27,7 @@ const Book = ({ book, updateBookShelf }) => {
                 id={book.id}
                 value={book.shelf ? book.shelf : "none"}
               >
-                <option value="none" disabled>
-                  Move to...
-                </option>
+                <option disabled>Move to...</option>
                 <option value="currentlyReading">Currently Reading</option>
                 <option value="wantToRead">Want to Read</option>
                 <option value="read">Read</option>
@@ -39,7 +37,7 @@ const Book = ({ book, updateBookShelf }) => {
           </div>
           <div className="book-title">{book.title}</div>
           <div className="book-authors">
-            {book.authors?.length > 0 ? book.authors[0] : "unknown"}
+            {book.authors?.length > 0 ? book.authors.join(" - ") : "unknown"}
           </div>
         </div>
       </li>
